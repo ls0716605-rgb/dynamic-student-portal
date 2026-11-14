@@ -1,0 +1,34 @@
+/* General website styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F4F4F4;
+    color: #2E2D29;
+}
+
+/* Stanford-inspired heading colours */
+h1, h2 {
+    color: #8C1515;
+}
+
+/* Registration form styling */
+form {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+}
+
+/* Form fields */
+input, select {
+    padding: 8px;
+    margin: 8px 0;
+}
+
+/* Submit button */
+button {
+    background-color: #8C1515;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
