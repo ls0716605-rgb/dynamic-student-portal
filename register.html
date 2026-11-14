@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration | Stanford Student Portal</title>
+</head>
+<body>
+
+    <main>
+        <h1>Student Registration</h1>
+
+        <form>
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <br><br>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <br><br>
+
+            <label for="course">Course of Study:</label>
+            <select id="course" name="course" required>
+                <option value="">Select your course</option>
+                <option value="computer-science">Computer Science</option>
+                <option value="data-science">Data Science</option>
+                <option value="information-technology">Information Technology</option>
+                <option value="business-information-technology">Business Information Technology</option>
+            </select>
+
+            <br><br>
+
+            <fieldset>
+                <legend>Gender</legend>
+
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+            </fieldset>
+
+            <br>
+
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to the terms and conditions</label>
+
+            <br><br>
+
+            <button type="submit">Register Student</button>
+        </form>
+
+        <h2>Admission Requirements</h2>
+
+        <ul>
+            <li>Completed application form</li>
+            <li>Copy of national identification or birth certificate</li>
+            <li>Academic certificates</li>
+            <li>Recent passport-size photograph</li>
+            <li>Valid email address</li>
+        </ul>
+
+        <h2>Registration Steps</h2>
+
+        <ol>
+            <li>Open the student registration page.</li>
+            <li>Enter your personal information.</li>
+            <li>Select your course of study.</li>
+            <li>Review and accept the terms and conditions.</li>
+            <li>Click the Register Student button.</li>
+        </ol>
+    </main>
+
+</body>
+</html>
