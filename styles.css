@@ -32,3 +32,45 @@ button {
     border: none;
     cursor: pointer;
 }
+
+/* Lab 6: Flexbox navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: #8C1515;
+    padding: 15px;
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Lab 6: Responsive CSS Grid layout */
+.main-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    align-items: center;
+    padding: 30px;
+}
+
+/* Make the campus image responsive */
+.campus-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Mobile responsive layout */
+@media (max-width: 768px) {
+    .main-layout {
+        grid-template-columns: 1fr;
+    }
+}
