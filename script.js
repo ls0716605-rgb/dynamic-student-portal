@@ -37,3 +37,33 @@ if (registrationForm) {
 
     });
 }
+// Lab 8: Store student names in an array
+const students = ["Alex", "Mary", "John", "Grace", "Daniel"];
+// Add one student to the webpage
+function addStudentToPage(name) {
+    const studentList = document.getElementById("student-list");
+
+    const listItem = document.createElement("li");
+    listItem.textContent = name;
+
+    studentList.appendChild(listItem);
+}
+// Display all students from the array
+function displayAllStudents(students) {
+    const studentList = document.getElementById("student-list");
+
+    // Clear the list before displaying students
+    studentList.innerHTML = "";
+
+    for (let i = 0; i < students.length; i++) {
+        addStudentToPage(students[i]);
+    }
+}
+// Display students when the button is clicked
+const showStudentsButton = document.getElementById("show-students");
+
+if (showStudentsButton) {
+    showStudentsButton.addEventListener("click", function() {
+        displayAllStudents(students);
+    });
+}
