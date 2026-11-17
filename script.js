@@ -1,3 +1,4 @@
+
 // Display a welcome message when the homepage loads
 alert("Welcome to the Dynamic Student Portal!");
 
@@ -18,52 +19,86 @@ if (yearOfStudy === 1) {
 } else {
     console.log(studentName + " is in year " + yearOfStudy + ".");
 }
+
 // Display numbers from 1 to 5
 for (let i = 1; i <= 5; i++) {
     console.log(i);
 }
+
 // Registration form validation
 const registrationForm = document.querySelector("form");
 
 if (registrationForm) {
     registrationForm.addEventListener("submit", function(event) {
 
-        const studentName = document.getElementById("fullname").value.trim();
+        const enteredName = document.getElementById("fullname").value.trim();
 
-        if (studentName === "") {
+        if (enteredName === "") {
             event.preventDefault();
             alert("Please enter your full name before submitting.");
         }
 
     });
 }
-// Lab 8: Store student names in an array
-const students = ["Alex", "Mary", "John", "Grace", "Daniel"];
-// Add one student to the webpage
-function addStudentToPage(name) {
+
+// Lab 9: Add one student object to the webpage
+function addStudentToPage(student) {
     const studentList = document.getElementById("student-list");
 
     const listItem = document.createElement("li");
-    listItem.textContent = name;
+
+    listItem.textContent = student.name + " - " +
+        student.course + " - Year " + student.year;
 
     studentList.appendChild(listItem);
 }
-// Display all students from the array
+
+// Display all students and update the student count
 function displayAllStudents(students) {
     const studentList = document.getElementById("student-list");
+    const studentCount = document.getElementById("student-count");
 
-    // Clear the list before displaying students
+    // Clear the existing student list
     studentList.innerHTML = "";
 
+    // Update the total number of students
+    studentCount.textContent = "Registered Students: " + students.length;
+
+    // Display each student
     for (let i = 0; i < students.length; i++) {
         addStudentToPage(students[i]);
     }
 }
-// Display students when the button is clicked
+
+// Lab 9: Fetch student data from the JSON file
 const showStudentsButton = document.getElementById("show-students");
 
 if (showStudentsButton) {
     showStudentsButton.addEventListener("click", function() {
-        displayAllStudents(students);
+
+        fetch("students.json")
+            .then(function(response) {
+
+                if (!response.ok) {
+                    throw new Error("Could not load student data.");
+                }
+
+                return response.json();
+            })
+
+            .then(function(data) {
+                displayAllStudents(data);
+            })
+
+            .catch(function(error) {
+
+                const studentList = document.getElementById("student-list");
+
+                studentList.textContent =
+                    "Unable to load student data. Please try again later.";
+
+                console.error("Error loading students:", error);
+            });
+
     });
 }

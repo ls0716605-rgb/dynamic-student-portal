@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Alex",
+        "course": "Computer Science",
+        "year": 2
+    },
+    {
+        "name": "Mary",
+        "course": "Data Science",
+        "year": 1
+    },
+    {
+        "name": "John",
+        "course": "Information Technology",
+        "year": 3
+    },
+    {
+        "name": "Grace",
+        "course": "Computer Science",
+        "year": 2
+    },
+    {
+        "name": "Daniel",
+        "course": "Business Information Technology",
+        "year": 1
+    }
+]
