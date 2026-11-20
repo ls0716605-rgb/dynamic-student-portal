@@ -1,76 +1,512 @@
-/* General website styling */
+
+/* =====================================
+   DYNAMIC STUDENT PORTAL
+   Modern Stanford-inspired theme
+===================================== */
+
+/* 1. Global styles */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #F4F4F4;
-    color: #2E2D29;
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f5f6f8;
+    color: #2e2d29;
+    line-height: 1.6;
 }
 
-/* Stanford-inspired heading colours */
-h1, h2 {
-    color: #8C1515;
+h1, h2, h3 {
+    color: #8c1515;
+    line-height: 1.25;
 }
 
-/* Registration form styling */
-form {
-    background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 500px;
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
 }
 
-/* Form fields */
-input, select {
-    padding: 8px;
-    margin: 8px 0;
+h2 {
+    font-size: 1.7rem;
 }
 
-/* Submit button */
-button {
-    background-color: #8C1515;
-    color: #FFFFFF;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
+p {
+    color: #555;
 }
 
-/* Lab 6: Flexbox navigation */
+/* 2. Header */
+header {
+    background: #ffffff;
+    padding: 22px 5%;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+header h1 {
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+/* 3. Navigation */
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    background-color: #8C1515;
-    padding: 15px;
+    flex-wrap: wrap;
+    gap: 35px;
+    background: #8c1515;
+    padding: 17px 20px;
 }
 
 nav a {
-    color: #FFFFFF;
+    color: #ffffff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.25s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #f3caca;
 }
 
-/* Lab 6: Responsive CSS Grid layout */
+/* 4. Main content */
+main {
+    width: 90%;
+    max-width: 1250px;
+    margin: 35px auto;
+}
+
 .main-layout {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 45px;
     align-items: center;
-    padding: 30px;
+    padding: 35px 0;
 }
 
-/* Make the campus image responsive */
+.welcome-content h1 {
+    font-size: 2.7rem;
+    margin-bottom: 18px;
+}
+
+.welcome-content p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
 .campus-image img {
+    display: block;
     width: 100%;
-    height: auto;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.14);
 }
 
-/* Mobile responsive layout */
+/* 5. General sections and cards */
+section {
+    margin-bottom: 30px;
+}
+
+.students-section,
+form,
+fieldset {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+}
+
+.students-section {
+    padding: 25px;
+    margin-top: 35px;
+}
+
+.students-section h2 {
+    margin-top: 0;
+}
+
+#student-list {
+    padding-left: 22px;
+}
+
+#student-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+/* 6. Buttons */
+button {
+    background: #8c1515;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 13px 23px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.25s ease,
+                transform 0.25s ease;
+}
+
+button:hover {
+    background: #650d0d;
+    transform: translateY(-2px);
+}
+
+/* 7. Timetable */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 22px rgba(0, 0, 0, 0.06);
+    margin-top: 20px;
+}
+
+caption {
+    padding: 15px;
+    font-size: 19px;
+    font-weight: 600;
+    color: #2e2d29;
+}
+
+th {
+    background: #8c1515;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 16px 12px;
+    text-align: center;
+}
+
+td {
+    padding: 16px 12px;
+    border: 1px solid #e5e5e5;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background: #f8f5f5;
+}
+
+tbody tr:hover {
+    background: #f3e6e6;
+}
+
+td[colspan] {
+    background: #f0e4e4;
+    color: #8c1515;
+    font-weight: 700;
+}
+
+/* 8. Registration form */
+form {
+    max-width: 750px;
+    padding: 30px;
+    margin: 25px 0;
+    box-shadow: 0 5px 22px rgba(0, 0, 0, 0.05);
+}
+
+form label {
+    display: inline-block;
+    margin: 12px 0 6px;
+    font-weight: 500;
+}
+
+input,
+select {
+    padding: 12px;
+    margin: 7px 0 15px;
+    border: 1px solid #d4d4d4;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 15px;
+    max-width: 100%;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #8c1515;
+    box-shadow: 0 0 0 3px rgba(140, 21, 21, 0.12);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: #8c1515;
+}
+
+fieldset {
+    padding: 18px;
+    margin: 18px 0;
+}
+
+legend {
+    color: #8c1515;
+    font-weight: 600;
+    padding: 0 8px;
+}
+
+form button {
+    margin-top: 12px;
+}
+
+/* 9. Admission information */
+form + h2 {
+    margin-top: 35px;
+}
+
+ul, ol {
+    line-height: 1.9;
+}
+
+/* 10. Footer */
+footer {
+    background: #2e2d29;
+    color: #ffffff;
+    text-align: center;
+    padding: 22px;
+    margin-top: 50px;
+}
+
+footer p {
+    color: #ffffff;
+    margin: 0;
+}
+
+/* 11. Responsive design */
 @media (max-width: 768px) {
+    header {
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    main {
+        width: 92%;
+    }
+
     .main-layout {
         grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .welcome-content h1 {
+        font-size: 2rem;
+    }
+
+    .campus-image img {
+        height: 280px;
+    }
+
+    form {
+        width: 100%;
+        padding: 20px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 9px 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        gap: 13px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    table {
+        font-size: 11px;
+    }
+
+    th, td {
+        padding: 7px 3px;
+        overflow-wrap: anywhere;
+    }
+}
+
+
+/* =====================================
+   LIVE ANIMATED BACKGROUND
+===================================== */
+
+body {
+    background: linear-gradient(
+        -45deg,
+        #f5f6f8,
+        #f8eaea,
+        #eeeeef,
+        #f5f0f0,
+        #f5f6f8
+    );
+
+    background-size: 400% 400%;
+    animation: backgroundFlow 18s ease infinite;
+}
+
+@keyframes backgroundFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    body {
+        animation: none;
+        background-position: center;
+    }
+}
+
+
+/* =====================================
+   PREMIUM WEBSITE ANIMATIONS
+===================================== */
+
+/* Smooth page entrance */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    animation: fadeIn 0.8s ease both;
+}
+
+nav {
+    animation: fadeIn 1s ease both;
+}
+
+main {
+    animation: fadeIn 1.2s ease both;
+}
+
+/* Navigation underline animation */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Campus image floating effect */
+.campus-image img {
+    animation: imageFloat 5s ease-in-out infinite;
+    transition: transform 0.4s ease;
+}
+
+@keyframes imageFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.campus-image img:hover {
+    transform: scale(1.02);
+}
+
+/* Section hover effects */
+.students-section,
+form {
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.students-section:hover,
+form:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+}
+
+/* Timetable row entrance */
+tbody tr {
+    animation: fadeIn 0.7s ease both;
+}
+
+tbody tr:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+tbody tr:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+tbody tr:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+tbody tr:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Button interaction */
+button {
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(140, 21, 21, 0.25);
+}
+
+/* Accessibility: reduce motion when requested */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
     }
 }
